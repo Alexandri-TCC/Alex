@@ -27,33 +27,6 @@ document.getElementById("formLogin").addEventListener("submit", async (event) =>
     }
 });
 
-// Função para alternar a visibilidade da senha
-function togglePasswordVisibility(passwordFieldId, toggleIconId) {
-    const passwordField = document.getElementById(passwordFieldId);
-    const toggleIcon = document.getElementById(toggleIconId);
-
-    // Alterna o tipo do campo (password/text)
-    const type = passwordField.type === 'password' ? 'text' : 'password';
-    passwordField.type = type;
-
-    // Alterna o ícone do olho (mostrar/ocultar)
-    toggleIcon.classList.toggle('fa-eye-slash');
-}
-
-// Evento para o campo de senha no login
-document.getElementById('toggle-password').addEventListener('click', function () {
-    togglePasswordVisibility('password', 'toggle-password');
-});
-
-// Evento para o campo de senha no cadastro
-document.getElementById('toggle-password-cadastro').addEventListener('click', function () {
-    togglePasswordVisibility('password-cadastro', 'toggle-password-cadastro');
-});
-
-// Evento para o campo de confirmar senha no cadastro
-document.getElementById('toggle-confirm-password-cadastro').addEventListener('click', function () {
-    togglePasswordVisibility('confirm-password-cadastro', 'toggle-confirm-password-cadastro');
-});
 
 
 
