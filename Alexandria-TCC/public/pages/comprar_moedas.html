@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/comprar_moedas.css">
+    <title>Alexandria</title>
+    <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+
+    
+
+</head>
+<body>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+  
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+            <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+          </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
+
+
+
+    <div class="titulo-decoracao">
+      <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+      <h2 class="titulo-decoracao">Planos Disponíveis</h2>
+      <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+    </div>
+
+    
+
+    <div class="cards-compra-container ">
+      <div class="card desabilitada" id="compraN1">
+          <h2>Comprar</h2>
+          <h3>Leitor Nível 1</h3>
+          <div class="separator"></div>
+          <div class="precos">
+              <p>1 Moeda: R$ 9,50</p>
+              <p>3 Moedas: R$ 27,00</p>
+              <p>5 Moedas: R$ 45,00</p>
+          </div>
+          <p class="quantidade-moedas">Quantidade Moedas</p>
+          <div class="input-quantidade">
+              <button onclick="decrement(this)">-</button>
+              <span class="numMoedas">1</span>
+              <button onclick="increment(this)">+</button>
+          </div>
+          <a><button class="comprar-button">Comprar</button></a>
+      </div>
+
+      <div class="card desabilitada" id="compraN2">
+          <div class="desconto">10% OFF</div>
+          <h2>Comprar</h2>
+          <h3>Leitor Nível 2</h3>
+          <div class="separator"></div>
+          <div class="precos">
+              <p>1 Moeda: R$ 8,55</p>
+              <p>3 Moedas: R$ 24,30</p>
+              <p>5 Moedas: R$ 40,50</p>
+          </div>
+          <p class="quantidade-moedas">Quantidade Moedas</p>
+          <div class="input-quantidade">
+              <button onclick="decrement(this)">-</button>
+              <span class="numMoedas">1</span>
+              <button onclick="increment(this)">+</button>
+          </div>
+          <a href="../pages/pagamento.html"><button class="comprar-button">Comprar</button></a>
+      </div>
+
+      <div class="card desabilitada" id="compraN3">
+          <div class="desconto">20% OFF</div>
+          <h2>Comprar</h2>
+          <h3>Leitor Nível 3</h3>
+          <div class="separator"></div>
+          <div class="precos">
+              <p>1 Moeda: R$ 7,60</p>
+              <p>3 Moedas: R$ 21,60</p>
+              <p>5 Moedas: R$ 36,00</p>
+          </div>
+          <p class="quantidade-moedas">Quantidade Moedas</p>
+          <div class="input-quantidade">
+              <button onclick="decrement(this)">-</button>
+              <span class="numMoedas">1</span>
+              <button onclick="increment(this)">+</button>
+          </div>
+          <a href="../pages/pagamento.html"><button class="comprar-button">Comprar</button></a>
+      </div>
+
+      <div class="card desabilitada" id="compraN4">
+          <div class="desconto">30% OFF</div>
+          <h2>Comprar</h2>
+          <h3>Leitor Nível 4</h3>
+          <div class="separator"></div>
+          <div class="precos">
+              <p>1 Moeda: R$ 6,65</p>
+              <p>3 Moedas: R$ 18,90</p>
+              <p>5 Moedas: R$ 31,50</p>
+          </div>
+          <p class="quantidade-moedas">Quantidade Moedas</p>
+          <div class="input-quantidade">
+              <button onclick="decrement(this)">-</button>
+              <span class="numMoedas">1</span>
+              <button onclick="increment(this)">+</button>
+          </div>
+          <a href="../pages/pagamento.html"><button class="comprar-button">Comprar</button></a>
+      </div>
+  </div>
+
+
+
+
+
+  <div class="titulo-decoracao">
+      <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+      <h2 class="titulo-decoracao">Vantagens da Troca</h2>
+      <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+    </div>
+    <div class="container-vantagens">
+      <div class="item-vantagens">
+          <img src="../img/Enfeites/van1.png" alt="Renovação de Leitura">
+          <h2>01</h2>
+          <h3>Renovação de Leitura</h3>
+          <p>Trocar seus livros permite que você explore novas histórias e experiências, mantendo a experiência de leitura sempre fresca e interessante.</p>
+      </div>
+      <div class="item-vantagens">
+          <img src="../img/Enfeites/van2.png" alt="Economia">
+          <h2>02</h2>
+          <h3>Economia</h3>
+          <p>Trocar livros é uma forma econômica de acessar novas leituras sem gastar dinheiro na compra de novos livros.</p>
+      </div>
+      <div class="item-vantagens">
+          <img src="../img/Enfeites/van3.png" alt="Sustentabilidade">
+          <h2>03</h2>
+          <h3>Sustentabilidade</h3>
+          <p>A troca de livros promove o consumo consciente e sustentável, mantendo os exemplares em circulação e reduzindo o desperdício.</p>
+      </div>
+      <div class="item-vantagens">
+          <img src="../img/Enfeites/van4.png" alt="Comunidade">
+          <h2>04</h2>
+          <h3>Comunidade</h3>
+          <p>Ao trocar livros, você se conecta com outros leitores com interesses semelhantes e compartilha recomendações e experiências de leitura.</p>
+      </div>
+      <div class="item-vantagens">
+          <img src="../img/Enfeites/van5.png" alt="Desapego">
+          <h2>05</h2>
+          <h3>Desapego</h3>
+          <p>Trocar livros que você já leu ajuda a liberar espaço na sua estante, mantendo sua coleção organizada e cheia de novidades.</p>
+      </div>
+  </div>
+
+
+
+
+
+  
+<footer id="rodape" class="fundo-cinza">
+  <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+          <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+          <ul id="lista-links" class="lista-rodape">
+              <li id="link-home" class="item-lista">
+                  <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Home</span>
+              </li></a>
+              <li id="link-livros" class="item-lista">
+                  <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Livros Disponíveis</span>
+              </li></a>
+              <li id="link-destaques" class="item-lista">
+                  <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Comprar Moedas</span>
+              </li></a>
+              <li id="link-publicar-livro" class="item-lista">
+                  <a href="./TodosLivros.html" onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Cadastrar Livros</span>
+              </li></a>
+          </ul>
+      </div>
+
+      <!-- Localização -->
+<div id="localizacao" class="coluna-rodape centralizado">
+  <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+  <p id="texto-localizacao" class="texto-rodape">
+      <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+      <span class="text-rodape">Brasil</span>
+  </p>
+  
+</div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+          <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+          <p id="telefone1" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55 (11) 97834-5522</span> 
+          </p>
+          <p id="telefone2" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span class="text-rodape">+55 (11) 96462-6242</span>  
+          </p>
+          <p id="email-sac" class="texto-rodape">
+              <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC: alexandria.tcc.01@gmail.com</span>   
+          </p>
+      </div>
+  </div>
+
+  <!-- Termos -->
+<div id="rodape-termos" class="centralizado text-rodape">
+  <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+</div>
+
+</footer>
+    
+    
+    
+    
+
+
+
+
+    <script src="../js/comprar_moedas.js"></script>
+    <script src="../js/comprar_moedas_sys.js" type="module"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>  
+    
+<script src="../js/pesquisa.js"></script>
+</body>
+</html>

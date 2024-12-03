@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/chat.css">
+    <title>Alexandria</title>
+    <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <script src="../js/extraFunc.js" type="module"></script>
+
+
+    <section class="chat-section">
+        <div class="chat-container">
+
+            <aside class ="chat-sidebar">
+
+                <ul class="chat-sidebar-menu">
+                    <li><a href="../index.html" class="chat-sidebar-logo" data-title="Home">
+                            <img src="../img/Icones/logo.png" alt="Logo" />
+                        </a></li>
+                    <li class="active"><a href="#" data-title="Chats"><i class="ri-chat-3-line"></i></a></li>
+
+
+                    <li class="chat-sidebar-profile">
+                        <button type="button" class="chat-sidebar-profile-toggle">
+                            <img id="imgUsuario" src="https://res.cloudinary.com/dwxftry8e/image/upload/v1732596135/Profile_avatar_placeholder_large_mluyfh.png"
+                                alt="">
+                        </button>
+                        <ul class="chat-sidebar-profile-dropdown">
+                            <li><a href="../pages/perfil.html"><i class="ri-user-line"></i> Perfil</a></li>
+                            <li><a href="" id="btnSair"><i class="ri-logout-box-line" ></i> Sair</a></li>
+                        </ul>
+                    <li><a href="../pages/comprar_moedas.html" data-title="? Moedas" id="infoMoedas"><i class="ri-coins-line"></i></a>
+                    </li>
+                    </li>
+                </ul>
+
+            </aside>
+
+            <div class="chat-content">
+
+                <div class="content-sidebar">
+                    <div class="content-sidebar-title">Chats</div>
+                    
+
+                    <div class="content-messages">
+                        <ul class="content-messages-list" id="listaConversa">
+                            
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="conversation conversation-default active" id="conversation-0">
+                    <i class="ri-chat-3-line"></i>
+                    <p>Selecione o bate-papo e vizualize a conversa!</p>
+                </div>
+                <div class="conversation" id="conversation-1" >
+                    <div class="conversation-top">
+                        <button type="button" class="conversation-back"><i class="ri-arrow-left-line"></i></button>
+                       
+                        <button type="button" class="conversation-user" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" style="border: none; background: none; padding: 0;">
+                            <img class="conversation-user-image"
+                                src="https://res.cloudinary.com/dwxftry8e/image/upload/v1732596135/Profile_avatar_placeholder_large_mluyfh.png"
+                                alt="" id="imgDestinatario">
+                            <div>
+                                <div class="conversation-user-name" id="txtUsuario">Carregando...</div>
+                            </div>
+                        </button>
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Informações do Perfil</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="text-center">
+                                            <img id="infoImg" class="conversation-user-image"
+                                                src="https://res.cloudinary.com/dwxftry8e/image/upload/v1732596135/Profile_avatar_placeholder_large_mluyfh.png"
+                                                alt="" style="width: 100px; height: 100px; border-radius: 50%;">
+                                        </div>
+
+                                        <p id="infoNome"><strong>Nome:</strong> Carregando...</p>
+                                        <p id="infoCidade"><strong>Localização:</strong> Carregando...</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="conversation-buttons">
+                            <button class="open-modal" data-bs-toggle="modal" data-bs-target="#booksModal"><i
+                                    class="ri-book-line"></i></button>
+                            <button type="button" id="btnInfo"><i class="ri-information-line"></i></button>
+                        </div>
+
+                
+
+                        <div class="modal fade" id="booksModal" tabindex="-1" aria-labelledby="booksModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="booksModalLabel">Livros Disponíveis</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="book-list" id="listaDisponivel">
+                                            
+                                            <div class="book-item d-flex mb-3">
+                                                <img src="https://via.placeholder.com/100" alt="Livro 2"
+                                                    class="book-image"
+                                                    style="width: 100px; height: 150px; border-radius: 5px;">
+                                                <div class="book-info ms-3">
+                                                    <h5 class="book-title">Livro 2</h5>
+                                                    <p class="book-author">Autor 2</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-item d-flex mb-3">
+                                                <img src="https://via.placeholder.com/100" alt="Livro 3"
+                                                    class="book-image"
+                                                    style="width: 100px; height: 150px; border-radius: 5px;">
+                                                <div class="book-info ms-3">
+                                                    <h5 class="book-title">Livro 3</h5>
+                                                    <p class="book-author">Autor 3</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                    <div class="conversation-main" id="containerMensagem">
+                        <ul class="conversation-wrapper">
+                            
+
+                        </ul>
+                    </div>
+
+
+                    <form class="conversation-form" id="enviaForm">
+                        
+                        <div class="conversation-form-group">
+                            <textarea class="conversation-form-input" rows="1" placeholder="Digite Aqui..." required id="txtMensagem"></textarea>
+                        </div>
+                        <button type="submit" class="conversation-form-button conversation-form-submit" id="btnEnvia">
+                            <i class="ri-send-plane-2-line"></i>
+                        </button>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/chat.js" type="module"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

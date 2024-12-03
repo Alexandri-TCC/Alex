@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <title>Alexandria</title>
+    <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+  
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+            <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+          </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div id="container-perfil">
+    <div class="container-perfil">
+      <div class="informacoes-perfil">
+          <img src="https://res.cloudinary.com/dwxftry8e/image/upload/v1732596135/Profile_avatar_placeholder_large_mluyfh.png" alt="Foto de perfil" class="foto-perfil" id="imgPerfil">
+          <div class="detalhes-perfil">
+              <h2 class="nome-usuario" id="txtNome">Carregando...</h2>
+              <p class="nivel-conta" id="txtNivel">Carregando...</p>
+              <p class="detalhes" id="txtEmail"><img src="../img/Icones/icone_email.png" alt="Ícone de email"> Carregando...</p>
+              <p class="detalhes" id="txtCidade"><img src="../img/Icones/icone_localizacao.png" alt="Ícone de localização">Carregando...</p>
+              <p class="icone-moedas" id="txtMoedas"><img src="../img/Icones/icone-moeda-perfil.png" alt="Ícone das moedas"> Moedas Disponíveis: Carregando...</p>
+          </div>
+      </div>
+      <div class="botoes-escolha">
+          <div class="botoes">
+              <a href="#" class="link-button">
+                <button class="btn btn-amarelo" id="btn-editar-perfil">Editar Perfil</button>
+              </a>
+              <a href="#" class="link-button" id="btn-sair">
+                  <button class="btn btn-transparente">Sair da Conta</button>
+              </a>
+          </div>
+          <a href="#" class="historico-compras">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                <path d="M8.5 3.5a3.5 3.5 0 0 0-7 0v9a3.5 3.5 0 0 0 7 0v-9z"/>
+            </svg>
+            <p class="historico-compras">Histórico de Compras</p>
+        </a>
+      </div>
+  </div>
+  
+  <div  class="Titulo-livro-cadastro">
+      <h2 class="titulo-livro">Livros Cadastrados</h2>
+  </div>
+  
+  <div  class="container-total-card" id="containerMeusLivros">
+      
+    <p>Carregando Livros...</p>
+
+  </div>
+  
+  <div class="Titulo-livro-cadastro">
+    <h2 class="titulo-livro">Trocas Recentes</h2>
+  <div class="Titulo-livro-cadastro" id="containerTrocas">
+      
+  
+      
+  </div>
+</div>
+</div>
+
+  <div id="container-editar-perfil" class="container-cadastro" style="display: none;">
+      <div class="seta-voltar">
+          <img src="../img/Icones/icone-seta.png" alt="Seta Voltar">
+      </div>
+      <form method="POST" class="form-login-cadastro" id="formEdit">
+          <img class="img-cadastro" src="../img/logo.png" alt="logo">
+          <h1 class="titulo-login-cadastro">Editar Perfil</h1>
+          <p class="mensagem-login-cadastro">Adicione seus dados no campo abaixo.</p>
+  
+          <input type="file" id="imgEdit" class="input-group" accept="image/*">
+
+          <!-- Nome Completo -->
+          <input type="text" id="nomeEdit" placeholder="Nome" required />
+  
+          <!-- Linha 2: CEP e Cidade -->
+          <div class="input-group">
+              <select id="cidadeEdit" required class="input-field">
+                        
+                <option value="" disabled selected>Selecione sua cidade</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Campinas">Campinas</option>
+                <option value="Guarulhos">Guarulhos</option>
+                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                <option value="São José dos Campos">São José dos Campos</option>
+                <option value="Ribeirão Preto">Ribeirão Preto</option>
+                <option value="Santos">Santos</option>
+                <option value="Sorocaba">Sorocaba</option>
+                <option value="Mauá">Mauá</option>
+                <option value="Osasco">Osasco</option>
+                <option value="Diadema">Diadema</option>
+                <option value="Jundiaí">Jundiaí</option>
+                <option value="Piracicaba">Piracicaba</option>
+                <option value="Bauru">Bauru</option>
+                <option value="São Carlos">São Carlos</option>
+                <option value="Indaiatuba">Indaiatuba</option>
+                <option value="Taubaté">Taubaté</option>
+                <option value="Franca">Franca</option>
+                <option value="Barueri">Barueri</option>
+                <option value="Botucatu">Botucatu</option>
+                <option value="Itu">Itu</option>
+                <option value="Bragança Paulista">Bragança Paulista</option>
+                <option value="Marília">Marília</option>
+                <option value="Tatuí">Tatuí</option>
+                <option value="São Vicente">São Vicente</option>
+                <option value="Jaguariúna">Jaguariúna</option>
+                <option value="Atibaia">Atibaia</option>
+                <option value="Caraguatatuba">Caraguatatuba</option>
+                <option value="Avaré">Avaré</option>
+                <option value="Presidente Prudente">Presidente Prudente</option>
+                <option value="Rio Claro">Rio Claro</option>
+                <option value="Sorocaba">Sorocaba</option>
+                <option value="Limeira">Limeira</option>
+                <option value="Catanduva">Catanduva</option>
+                <option value="São Sebastião">São Sebastião</option>
+                <option value="Pindamonhangaba">Pindamonhangaba</option>
+                <option value="Assis">Assis</option>
+                <option value="São Roque">São Roque</option>
+                <option value="Santa Bárbara d'Oeste">Santa Bárbara d'Oeste</option>
+                <option value="Itapevi">Itapevi</option>
+                <option value="Indaiatuba">Indaiatuba</option>
+                <option value="Igaratá">Igaratá</option>
+                <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                <option value="Guarujá">Guarujá</option>
+              </select>
+            </div>
+  
+          <!-- Linha 4: Email 
+          <input type="email" id="email-cadastro" placeholder="Email" required />-->
+  
+          <!-- Linha 5: Senha e Confirmar Senha 
+          <div class="input-group">
+              <input type="password" class="input-field" id="senha" placeholder="Senha" required />
+              <input type="password" class="input-field" id="confirmar-senha" placeholder="Confirmar Senha" required />
+          </div>-->
+  
+          <button type="submit" class="btn" id="btnEdit">Editar</button>
+      </form>
+  </div>
+
+
+
+  <div class="fundo-borrado">
+    <div class="container-historico">
+        <h2>Histórico de Compras</h2>
+        <table id="tabela-historico">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Moedas</th>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tabelaCompras">
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+  
+
+<footer id="rodape" class="fundo-cinza">
+  <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+          <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+          <ul id="lista-links" class="lista-rodape">
+              <li id="link-home" class="item-lista">
+                  <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Home</span>
+              </li></a>
+              <li id="link-livros" class="item-lista">
+                  <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Livros Disponíveis</span>
+              </li></a>
+              <li id="link-destaques" class="item-lista">
+                  <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Comprar Moedas</span>
+              </li></a>
+              <li id="link-publicar-livro" class="item-lista">
+                  <a href="./TodosLivros.html" onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Cadastrar Livros</span>
+              </li></a>
+          </ul>
+      </div>
+
+      <!-- Localização -->
+<div id="localizacao" class="coluna-rodape centralizado">
+  <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+  <p id="texto-localizacao" class="texto-rodape">
+      <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+      <span class="text-rodape">Brasil</span>
+  </p>
+  
+</div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+          <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+          <p id="telefone1" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55 (11) 97834-5522</span> 
+          </p>
+          <p id="telefone2" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span class="text-rodape">+55 (11) 96462-6242</span>  
+          </p>
+          <p id="email-sac" class="texto-rodape">
+              <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC: alexandria.tcc.01@gmail.com</span>   
+          </p>
+      </div>
+  </div>
+
+  <!-- Termos -->
+<div id="rodape-termos" class="centralizado text-rodape">
+  <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+</div>
+
+</footer>
+
+    <script src="../js/perfil.js" type="module"></script>
+    <script src="../js/editaPerfil.js" type="module"></script>
+    
+<script src="../js/pesquisa.js"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

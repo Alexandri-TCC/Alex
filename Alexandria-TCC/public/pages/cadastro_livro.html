@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cadastro_livro.css">
+  <title>Alexandria</title>
+  <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar"
+            aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+          <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+        </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+
+  <a href="javascript:void(0)" onclick="window.history.back();">
+    <button class="btn-voltar">
+      <img src="../img/Icones/icone-voltar.png" alt="Voltar" class="icone-voltar">
+    </button>
+  </a>
+  </div>
+  
+  <div class="form-container">
+    <h2 class="titulo-livro">Cadastre seu Livro</h2>
+    <div class="upload-section">
+      <label for="upload-foto" class="upload-box">
+        <div class="upload-placeholder">
+          <img src="../img/Icones/icone-upload.png" alt="Upload Icon" />
+          <p>Adicione até 3 imagens do seu livro</p>
+        </div>
+        <input type="file" id="upload-foto" name="file" accept="image/*" multiple onchange="previewImages(event)" />
+        <div id="image-preview" class="image-preview"></div> <!-- As imagens aparecerão aqui -->
+      </label>
+      <p class="upload-info">Limite de 3 imagens. Formato Recomendado: JPG | PNG</p>
+      <div id="image-names" class="image-names"></div> <!-- Nomes das imagens abaixo -->
+    </div>
+  
+    <div class="form-fields">
+      <div class="field-group">
+        <label for="isbn">Qual é o seu livro?</label>
+        <input type="text" id="isbn" placeholder="Livro" disabled />
+      </div>
+  
+      <div class="field-group">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" placeholder="Digite uma breve descrição sobre o livro"></textarea>
+      </div>
+  
+      <div class="field-group">
+        <label for="estado">Estado do Livro</label>
+        <select id="estado">
+          <option disabled selected>Selecione o estado que melhor se adequa</option>
+          <option>Bom</option>
+          <option>Regular</option>
+          <option>Ruim</option>
+        </select>
+      </div>
+  
+      <button type="button" class="cadastrar-btn">Cadastrar</button>
+    </div>
+  </div>
+  
+  <script>
+    // Função para mostrar as imagens selecionadas dentro do campo de input
+    function previewImages(event) {
+      const input = event.target;
+      const files = input.files;
+  
+      // Limita a seleção de imagens a no máximo 3
+      if (files.length > 3) {
+        alert('Você pode selecionar no máximo 3 imagens.');
+        input.value = ""; // Limpa o campo caso exceda o limite
+        return;
+      }
+  
+      const previewContainer = document.getElementById('image-preview');
+      const imageNamesContainer = document.getElementById('image-names');
+      previewContainer.innerHTML = ''; // Limpa as imagens anteriores
+      imageNamesContainer.innerHTML = ''; // Limpa os nomes anteriores
+  
+      let currentIndex = 0;
+  
+      // Exibe as miniaturas das imagens dentro do input
+      for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.position = 'absolute';
+          img.style.width = '100%'; // Faz com que a imagem ocupe toda a largura do campo de input
+          img.style.height = '100%'; // Faz com que a imagem ocupe toda a altura do campo de input
+          img.style.objectFit = 'cover'; // Assegura que a imagem será cortada proporcionalmente
+          img.style.transition = 'opacity 1s ease-in-out';
+          img.style.opacity = '0'; // Começa invisível
+  
+          previewContainer.appendChild(img);
+  
+          // Adiciona o nome da imagem abaixo do input
+          const name = document.createElement('p');
+          name.textContent = files[i].name; // Nome do arquivo
+          imageNamesContainer.appendChild(name);
+          
+          // Aguardar a imagem carregar para aplicar a alternância
+          setTimeout(() => {
+            img.style.opacity = '1'; // Torna a imagem visível
+          }, 10);
+        };
+        reader.readAsDataURL(files[i]);
+      }
+  
+      // Alterna entre as imagens a cada 3 segundos
+      setInterval(function() {
+        const images = previewContainer.querySelectorAll('img');
+        images.forEach((img, index) => {
+          img.style.opacity = (index === currentIndex) ? '1' : '0'; // Alterna a opacidade
+        });
+        currentIndex = (currentIndex + 1) % files.length; // Ciclo entre as imagens
+      }, 3000); // Altera a imagem a cada 3 segundos
+    }
+  </script>
+  
+  <style>
+    /* Estilos para o campo de input com as imagens alternando */
+    #image-preview {
+      position: relative;
+      width: 100%;
+      height: 200px; /* Define uma altura para o campo de imagens */
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      overflow: hidden; /* Garante que as imagens não ultrapassem os limites */
+    }
+  
+    #image-preview img {
+      transition: opacity 1s ease-in-out; /* Faz a transição suave entre as imagens */
+    }
+  
+    /* Estilos para os nomes das imagens abaixo do input */
+    .image-names {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  
+    .image-names p {
+      margin: 3px 0;
+    }
+  </style>
+  
+
+  <div class="carousel-container">
+    <h3 class="titulo-motivo">12 MOTIVOS PARA TROCAR SEU LIVRO</h3>
+    <hr>
+    <div class="grid-cards">
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo1.png" alt="Motivo 1">
+        </div>
+        <div class="card-content">
+          <h4>Liberar espaço na estante</h4>
+          <p>Desocupe sua estante para novos títulos incríveis.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo2.png" alt="Motivo 2">
+        </div>
+        <div class="card-content">
+          <h4>Dar nova vida aos livros</h4>
+          <p>Seus livros podem inspirar outros leitores!</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo3.png" alt="Motivo 3">
+        </div>
+        <div class="card-content">
+          <h4>Descobrir novas histórias</h4>
+          <p>Explore novos mundos sem gastar dinheiro.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo4.png" alt="Motivo 4">
+        </div>
+        <div class="card-content">
+          <h4>Incentivar a leitura sustentável</h4>
+          <p>Compartilhe livros e ajude o meio ambiente.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo5.png" alt="Motivo 5">
+        </div>
+        <div class="card-content">
+          <h4>Conectar-se com outros leitores</h4>
+          <p>Troque experiências e conheça novos amigos.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo6.png" alt="Motivo 6">
+        </div>
+        <div class="card-content">
+          <h4>Explorar novos gêneros</h4>
+          <p>Experimente livros de diferentes gêneros.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo7.png" alt="Motivo 7">
+        </div>
+        <div class="card-content">
+          <h4>Reduzir o desperdício</h4>
+          <p>Ajude o planeta ao reaproveitar seus livros.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo8.png" alt="Motivo 8">
+        </div>
+        <div class="card-content">
+          <h4>Renovar seu acervo</h4>
+          <p>Mantenha sua coleção sempre atualizada.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo9.png" alt="Motivo 9">
+        </div>
+        <div class="card-content">
+          <h4>Diversão garantida</h4>
+          <p>Trocar livros é uma experiência divertida!</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo10.png" alt="Motivo 10">
+        </div>
+        <div class="card-content">
+          <h4>Enriquecer sua leitura</h4>
+          <p>Adicione variedade à sua rotina de leitura.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo11.png" alt="Motivo 11">
+        </div>
+        <div class="card-content">
+          <h4>Estimular a leitura de outros</h4>
+          <p>Compartilhe seus livros e incentive a leitura entre amigos e familiares.</p>
+        </div>
+      </div>
+
+      <div class="card animacao">
+        <div class="card-image">
+          <img src="../img/Icones/motivo12.png" alt="Motivo 12">
+        </div>
+        <div class="card-content">
+          <h4>Troca sem custos</h4>
+          <p>Troque livros sem gastar dinheiro, apenas compartilhe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer id="rodape" class="fundo-cinza">
+    <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+        <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+        <ul id="lista-links" class="lista-rodape">
+          <li id="link-home" class="item-lista">
+            <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Home</span>
+          </li></a>
+          <li id="link-livros" class="item-lista">
+            <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Livros Disponíveis</span>
+          </li></a>
+          <li id="link-destaques" class="item-lista">
+            <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Comprar Moedas</span>
+          </li></a>
+          <li id="link-publicar-livro" class="item-lista">
+            <a href="./TodosLivros.html"
+              onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img
+                class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta"> <span
+                class="link-text">Cadastrar Livros</span>
+          </li></a>
+        </ul>
+      </div>
+
+      <!-- Localização -->
+      <div id="localizacao" class="coluna-rodape centralizado">
+        <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+        <p id="texto-localizacao" class="texto-rodape">
+          <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+          <span class="text-rodape">Brasil</span>
+        </p>
+
+      </div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+        <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+        <p id="telefone1" class="texto-rodape">
+          <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55
+            (11) 97834-5522</span>
+        </p>
+        <p id="telefone2" class="texto-rodape">
+          <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span
+            class="text-rodape">+55 (11) 96462-6242</span>
+        </p>
+        <p id="email-sac" class="texto-rodape">
+          <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC:
+            alexandria.tcc.01@gmail.com</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Termos -->
+    <div id="rodape-termos" class="centralizado text-rodape">
+      <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
+
+
+  <script src="../js/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/cadastro_livro.js" type="module"></script>
+
+  <script src="../js/pesquisa.js"></script>
+</body>
+
+</html>

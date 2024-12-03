@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/pagamento.css">
+        <title>Alexandria</title>
+        <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+  
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+            <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+          </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
+    <div class="pagina-pagamento">
+      <div class="secao-forma-pagamento" id="container-opcoes">
+          <h2 class="titulo-forma-pagamento">Forma de Pagamento</h2>
+          <div class="opcao-pagamento">
+              <label for="cartao-credito" class="container-opcao">
+                  <input type="radio" id="cartao-credito" name="pagamento">
+                  <img src="../img//Icones/iconeCredito.png" alt="Ícone de Cartão de Crédito">
+                  <span>Cartão de Crédito</span>
+              </label>
+          </div>
+          <div class="opcao-pagamento">
+              <label for="cartao-debito" class="container-opcao">
+                  <input type="radio" id="cartao-debito" name="pagamento">
+                  <img src="../img//Icones/iconeDebito.png" alt="Ícone de Cartão de Débito">
+                  <span>Cartão de Débito</span>
+              </label>
+          </div>
+          <div class="opcao-pagamento">
+            <label for="radio-pix" class="container-opcao">
+                <input type="radio" id="radio-pix" name="pagamento">
+                <img src="../img//Icones/iconePix.png" alt="Ícone de Pix">
+                <span>Pix</span>
+            </label>
+          </div>
+          
+      </div>
+      <div class="secao-resumo-compra" id="resumo-compras">
+          <h2 class="titulo-resumo">Resumo da Compra</h2>
+          <div class="item-resumo-compra">
+              <span>Produto</span>
+              <span id="infoNivel"></span>
+          </div>
+          <div class="item-resumo-compra">
+              <span>Valor da Moeda</span>
+              <span id="infoMoeda"></span>
+          </div>
+          <hr class="divisor-resumo">
+          <div class="item-resumo-compra">
+              <span>Total</span>
+              <span id="infoTotal"></span>
+          </div>
+      </div>
+  </div>
+<!-- Formulário de pagamento - Cartão de Débito -->
+<div class="container-pagamento-cartao-debito" id="container-pagamento" style="display: none;">
+  <div class="seta-esquerda" id="voltar-debito">
+    <img src="../img/Icones/icone-seta.png" alt="Voltar">
+  </div>
+  <form method="POST" class="form-pagamento-cartao" id="payment-form">
+      <h1 class="titulo-pagamento-cartao" id="txtDebito">Cartão de Débito</h1>
+      <p class="mensagem-pagamento-cartao">Adicione seus dados do cartão no campo abaixo.</p>
+
+     
+      <label class="label-login" for="nome">Nome no cartão</label>
+      <input type="text" id="nome" placeholder="Nome que está no cartão" required />
+
+      <label class="label-login" for="ncpf">CPF titular do cartão</label>
+      <input type="text" id="ncpf" placeholder="CPF do titular" required />
+
+      <label class="label-login" for="card-element">Número do cartão</label>
+      <div id="card-element" class="falsoInput">
+      </div>
+
+      <label class="label-login" for="expiry-element">Data vencimento</label>
+      <div id="expiry-element" class="falsoInput">
+      </div>
+
+
+      <label class="label-login" for="cvc-element">Código de segurança</label>
+      <div id="cvc-element" class="falsoInput">
+      </div>
+
+
+      <input type="submit" value="Efetuar" class="btn" id="btn-cadastrar" />
+      <div id="payment-message"></div>
+  </form>
+</div>
+
+
+
+<!-- Formulário de pagamento - Cartão de Credito-->
+
+
+
+<!-- Formulário de pagamento - Pix-->
+
+<!-- Formulário de pagamento - Pix -->
+<div class="container-copiar-codigo-pix" id="container-pix" style="display: none;">
+  <div class="seta-esquerda" id="voltar-pix">
+      <img src="../img/Icones/icone-seta.png" alt="Voltar">
+  </div>
+  <h1>Código Pix</h1>
+  <div class="codigo-pix">
+      <p>000201 010212 26040014BR.GOV.BCB.PIX 52040000 5303986 5802BR 5913NOME DO RECEBEDOR 6009SAO PAULO 610805409000 62140516***APLICACAO PIX*** 63041D3D
+        </p>
+  </div>
+  <input type="submit" value="Copiar" class="btn" id="copiar-codigo" />
+  <div class="quebra-de-linha">
+      <p class="decoracao-ou">Ou</p>
+  </div>
+  <div class="qrcod">
+      <p>Aponte a câmera do seu celular no Qr-Code</p>
+      <img src="../img/Icones/qrcode.png" alt="">
+  </div>
+</div>
+
+
+
+
+<footer id="rodape" class="fundo-cinza">
+  <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+          <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+          <ul id="lista-links" class="lista-rodape">
+              <li id="link-home" class="item-lista">
+                  <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Home</span>
+              </li></a>
+              <li id="link-livros" class="item-lista">
+                  <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Livros Disponíveis</span>
+              </li></a>
+              <li id="link-destaques" class="item-lista">
+                  <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Comprar Moedas</span>
+              </li></a>
+              <li id="link-publicar-livro" class="item-lista">
+                  <a href="./TodosLivros.html" onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Cadastrar Livros</span>
+              </li></a>
+          </ul>
+      </div>
+
+      <!-- Localização -->
+<div id="localizacao" class="coluna-rodape centralizado">
+  <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+  <p id="texto-localizacao" class="texto-rodape">
+      <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+      <span class="text-rodape">Brasil</span>
+  </p>
+  
+</div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+          <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+          <p id="telefone1" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55 (11) 97834-5522</span> 
+          </p>
+          <p id="telefone2" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span class="text-rodape">+55 (11) 96462-6242</span>  
+          </p>
+          <p id="email-sac" class="texto-rodape">
+              <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC: alexandria.tcc.01@gmail.com</span>   
+          </p>
+      </div>
+  </div>
+
+  <!-- Termos -->
+<div id="rodape-termos" class="centralizado text-rodape">
+  <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+</div>
+
+</footer>
+
+
+<script src="../js/pesquisa.js"></script>
+<script type="module" src="../js/pagamento.js"></SCRipt>
+<script src="../js/opcoes_pagamento.js"></script>
+<script src="../js/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

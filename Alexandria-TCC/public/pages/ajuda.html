@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ajuda.css">
+    <title>Alexandria</title>
+    <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+  
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+            <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+          </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+    <div class="container-ajuda">
+      
+      
+        <div class="titulo-decoracao">
+            <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+            <h2 class="titulo-decoracao">Algumas Dúvidas Frequentes</h2>
+            <img class="linha-zig-zag" src="../img/Enfeites/img-zig-zag.png" alt="">
+        </div>
+        
+    </div>
+    
+    <div class="container-info">
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-trocas.png" alt="Troca"></div>
+            <h3 class="text-card">Troca</h3>
+            <div><a href="#troca"><button class="button-card">Mais Detalhes</button></a></div>
+           
+        </div>
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-comoreceber.png" alt="Como recebo meu livro"></div>
+            <h3 class="text-card">Como recebo meu livro</h3>
+            <div><a href="#receber"><button class="button-card">Mais Detalhes</button></a></div>
+           
+        </div>
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-livros.png" alt="Livros"></div>
+            <h3 class="text-card">Livros</h3>
+            <div><a href="#livros"><button class="button-card">Mais Detalhes</button></a></div>
+            
+        </div>
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-recombensas.png" alt="Benefícios e Recompensas"></div>
+            <h3 class="text-card">Benefícios e Recompensas</h3>
+            <div><a href="#Benefícios"><button class="button-card">Mais Detalhes</button></a></div>
+        
+        </div>
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-moedas.png" alt="Moedas"></div>
+            <h3 class="text-card">Moedas</h3>
+            <div><a href="#moedas"><button class="button-card">Mais Detalhes</button></a></div>
+        </div>
+        <div class="card-info">
+            <div class="icone-info"><img src="../img/Icones/icone-nao-encontro.png" alt="Não encontramos a pergunta"></div>
+            <h3 class="text-card">Não encontrou a pergunta</h3>
+            <div><a href="#inpu-perguntas"><button class="button-card">Mais Detalhes</button></a></div>
+            
+        </div>
+    </div>
+    
+
+
+
+    <div class="container-faq" id="troca">
+        <div class="titulo-perguntas"><h4>Perguntas</h4> <hr></div>
+        <div class="item-faq">
+          <div class="pergunta-faq">
+            <img src="../img/Icones/pergunta1.png" alt="Ícone pergunta" class="icone-faq" />
+            Como funciona o processo de troca?
+            <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+          </div>
+          <div class="resposta-faq">
+            O processo de troca é conduzido diretamente pelos usuários através do chat da plataforma. Você cadastra os livros que deseja trocar e outros usuários podem visualizá-los e entrar em contato com você pelo chat. A negociação é feita de forma livre, com as partes combinando os detalhes, como quais livros serão trocados e o método de envio. Após chegarem a um acordo, ambos confirmam a troca na plataforma, que pode registrar os dados para acompanhamento.
+          </div>
+        </div>
+      
+        <div class="item-faq">
+          <div class="pergunta-faq">
+            <img src="../img/Icones/pergunta2.png" alt="Ícone pergunta" class="icone-faq" />
+            Como faço para colocar livros para troca?
+            <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+          </div>
+          <div class="resposta-faq">
+            Para disponibilizar um livro para troca, acesse a seção "Meus Livros" ou "Cadastrar Livro" na plataforma. Insira as informações básicas sobre o livro, como título, autor, estado de conservação e, se possível, uma foto. Após o cadastro, o livro ficará visível para outros usuários, que poderão entrar em contato com você pelo chat para negociar a troca.
+          </div>
+        </div>
+      
+        <div class="item-faq">
+          <div class="pergunta-faq">
+            <img src="../img/Icones/pergunta3.png" alt="Ícone pergunta" class="icone-faq" />
+            Como posso visualizar minhas solicitações de troca feitas e recebidas?
+            <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+          </div>
+          <div class="resposta-faq">
+            As solicitações de troca podem ser acompanhadas na seção "Chat". Nessa área, você encontra todas as interações, incluindo negociações iniciadas por você e solicitações recebidas. Como as negociações são feitas pelo chat, você também pode revisar as conversas para acompanhar os detalhes.
+          </div>
+        </div>
+
+        <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta4.png" alt="Ícone pergunta" class="icone-faq" />
+              O que acontece se eu rejeitar uma solicitação de troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Se você não estiver interessado na proposta feita por outro usuário, pode simplesmente informá-lo pelo chat que não deseja prosseguir. Não há penalidade, e o livro continuará disponível para novas solicitações de troca por outros usuários.
+            </div>
+          </div>
+        
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta5.png" alt="Ícone pergunta" class="icone-faq" />
+              Qual é o prazo para que a pessoa aceite uma solicitação de troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Não há um prazo fixo para as trocas, pois o processo é conduzido diretamente entre os usuários pelo chat. O ideal é que as partes cheguem a um acordo em um tempo razoável, para que ambos possam avançar com a troca.
+            </div>
+          </div>
+        
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta6.png" alt="Ícone pergunta" class="icone-faq" />
+              Como posso desistir de uma troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Se decidir não prosseguir com uma troca, basta informar o outro usuário pelo chat. Como o acordo é informal até o envio dos livros, você pode desistir a qualquer momento antes de realizar o envio. Recomenda-se manter uma comunicação clara e respeitosa com o outro participante.
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta7.png" alt="Ícone pergunta" class="icone-faq" />
+              O que devo fazer se a pessoa com quem eu troquei o livro não responder?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Se o outro usuário deixar de responder no chat ou não cumprir o combinado, você pode reportar o problema à equipe de suporte da plataforma. Eles poderão intervir, se necessário, para mediar a situação e garantir o bom funcionamento da comunidade.
+            </div>
+          </div>
+        
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta8.png" alt="Ícone pergunta" class="icone-faq" />
+              Existe algum custo envolvido na troca de livros?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                A troca em si é gratuita, mas o envio dos livros geralmente é responsabilidade dos participantes. Vocês podem combinar quem arcará com os custos ou optar por fretes mais econômicos, como o envio de livros por registro módico. Se ambos estiverem na mesma cidade, também podem combinar uma entrega presencial para evitar custos adicionais.
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+           
+          <div class="item-faq" id="receber">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-1.png" alt="Ícone pergunta" class="icone-faq" />
+              Como combinamos a entrega do livro?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                A entrega do livro é combinada diretamente entre os usuários através do chat da plataforma. Lá, vocês podem discutir os detalhes, como o método de envio, endereço, ou até mesmo marcar um local para entrega presencial, caso estejam próximos.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-2.png" alt="Ícone pergunta" class="icone-faq" />
+              Onde posso receber meu livro?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Você pode receber o livro no endereço informado durante a negociação ou em um local combinado no chat, caso opte por uma entrega presencial. Para envios pelos correios, o livro será entregue no endereço cadastrado ou em uma agência, dependendo da modalidade de envio escolhida.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-3.png" alt="Ícone pergunta" class="icone-faq" />
+              E se a outra pessoa não responder no chat?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Se a outra pessoa não responder no chat após a troca ter sido combinada, você pode esperar um período razoável e, em seguida, reportar o problema ao suporte da plataforma. Isso ajuda a evitar usuários inativos ou que não cumpram os acordos.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-4.png" alt="Ícone pergunta" class="icone-faq" />
+              Como faço para confirmar que recebi o livro?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Depois de receber o livro, acesse a seção "Chat" e marque a troca como concluída. Essa confirmação também ajuda a outra pessoa a saber que o envio foi bem-sucedido. Se a plataforma tiver um sistema de avaliações, você poderá avaliar a experiência.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-5.png" alt="Ícone pergunta" class="icone-faq" />
+              Qual é o prazo para combinar a entrega do livro?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                O prazo para combinar a entrega depende da negociação entre as partes. É recomendável entrar em contato pelo chat logo após a solicitação ser aceita e definir os detalhes em até 7 dias, para evitar atrasos desnecessários.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-6.png" alt="Ícone pergunta" class="icone-faq" />
+              O que devo fazer se o livro não for entregue?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                Se o livro não for entregue no prazo combinado, tente entrar em contato novamente com a outra pessoa pelo chat. Caso ela não responda ou o problema persista, relate a situação ao suporte da plataforma para buscar uma solução.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-7.png" alt="Ícone pergunta" class="icone-faq" />
+              Quanto custa para eu pegar o livro?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+                O custo depende do método de entrega. Se for enviado pelos correios, o custo do frete geralmente é pago pelo remetente ou definido durante a negociação. Em entregas presenciais, geralmente não há custo, a menos que acordem algo específico. Se você optar por buscar em um local combinado, o custo será apenas o deslocamento.
+            </div>
+          </div>
+         
+          <br>
+          <br>
+          <br>
+
+          <div class="item-faq" id="livros">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-trocas1.png" alt="Ícone pergunta" class="icone-faq" />
+              Como posso cadastrar um livro para troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Para cadastrar um livro para troca, acesse a seção "Cadastrar Livros" na plataforma. Preencha as informações solicitadas, como título, autor, gênero e estado de conservação do livro. Uma foto é altamente otimizada, pois adicione isso aumenta as chances de interesse por parte de outros usuários. Após confirmar os dados, o livro será listado em sua biblioteca e ficará disponível para troca.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-trocas2.png" alt="Ícone pergunta" class="icone-faq" />
+              O que devo fazer se o livro que recebi estiver em condições de ruínas?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Se o livro recebido estiver em condições diferentes das combinadas, entre em contato com uma pessoa pelo chat para tentar resolver a situação de forma amigável. Caso não haja acordo, você pode relatar o problema ao suporte da plataforma, enviando fotos do livro recebido e explicando o ocorrido. A plataforma poderá mediar a situação, dependendo de suas políticas.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-trocas3.png" alt="Ícone pergunta" class="icone-faq" />
+              Como acessar a lista dos meus livros cadastrados para troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Você pode acessar a lista de seus livros cadastrados na seção "Meus Livros" ou equivalente. Nessa área, você verá todos os livros que disponibilizaram para troca, com opções para editar informações, remover livros ou verificar o interesse de outros usuários.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-receber-4.png" alt="Ícone pergunta" class="icone-faq" />
+              Como encontrar livros disponíveis para troca?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Para encontrar livros disponíveis para troca, acesse a seção de "Livros" da plataforma. Utilize filtros como gênero ou estado de conservação para localizar livros de seu interesse. Quando encontrar algo que deseja, entre em contato com o dono do livro pelo chat para negociar a troca.
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+           
+          <div class="item-faq" id="Benefícios">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/perguntas-beneficios-1.png" alt="Ícone pergunta" class="icone-faq" />
+              Existem benefícios para usuários frequentes?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Sim, o principal benefício para usuários frequentes é o aumento do nível do usuário. Quanto maior o seu nível, maior será o desconto na compra de moedas da plataforma, permitindo que você economize e aproveite ainda mais as funcionalidades oferecidas.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/perguntas-beneficios-2.png" alt="Ícone pergunta" class="icone-faq" />
+              Como posso ganhar os benefícios extras?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Para aumentar seu nível e obter descontos maiores na compra de moedas, você deve ser um usuário ativo. Isso significa cadastrar livros regularmente, participar de trocas, cumprir prazos combinados e manter boas interações com outros usuários. O aumento de nível é determinado pelo seu histórico de atividades e pelo engajamento dentro da plataforma.
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+           
+          <div class="item-faq" id="moedas">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-moedas1.png" alt="Ícone pergunta" class="icone-faq" />
+              Onde posso verificar o saldo das minhas moedas?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Você pode verificar o saldo das suas moedas na parte do "Perfil" da plataforma. Lá, é exibido o total de moedas acumuladas, além de possíveis informações sobre o histórico de ganhos e utilizações.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src="../img/Icones/pergunta-moedas2.png" alt="Ícone pergunta" class="icone-faq" />
+              As moedas acumuladas expiram depois de um tempo?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+             As moedas não expiram enquanto a sua conta permanecer ativa. Caso a conta esteja desativada, o saldo de moedas pode ser perdido. Por isso, é importante manter sua conta ativa e em uso.
+            </div>
+          </div>
+          <div class="item-faq">
+            <div class="pergunta-faq">
+              <img src=" ../img/Icones/pergunta-receber-6.png" alt="Ícone pergunta" class="icone-faq" />
+              Há um limite máximo de moedas que posso acumular?
+              <img class="seta-ajuda" src="../img/Icones/seta-ajuda.png" alt="">
+            </div>
+            <div class="resposta-faq">
+              Não há limite para a quantidade de moedas que você pode acumular. Você pode continuar comprando moedas, de acordo com suas necessidades e atividades na plataforma.
+</div>
+</div>
+</div>
+
+<footer id="rodape" class="fundo-cinza">
+  <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+          <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+          <ul id="lista-links" class="lista-rodape">
+              <li id="link-home" class="item-lista">
+                  <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Home</span>
+              </li></a>
+              <li id="link-livros" class="item-lista">
+                  <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Livros Disponíveis</span>
+              </li></a>
+              <li id="link-destaques" class="item-lista">
+                  <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Comprar Moedas</span>
+              </li></a>
+              <li id="link-publicar-livro" class="item-lista">
+                  <a href="./TodosLivros.html" onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta">  <span class="link-text">Cadastrar Livros</span>
+              </li></a>
+          </ul>
+      </div>
+
+      <!-- Localização -->
+<div id="localizacao" class="coluna-rodape centralizado">
+  <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+  <p id="texto-localizacao" class="texto-rodape">
+      <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+      <span class="text-rodape">Brasil</span>
+  </p>
+  
+</div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+          <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+          <p id="telefone1" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55 (11) 97834-5522</span> 
+          </p>
+          <p id="telefone2" class="texto-rodape">
+              <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span class="text-rodape">+55 (11) 96462-6242</span>  
+          </p>
+          <p id="email-sac" class="texto-rodape">
+              <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC: alexandria.tcc.01@gmail.com</span>   
+          </p>
+      </div>
+  </div>
+
+  <!-- Termos -->
+<div id="rodape-termos" class="centralizado text-rodape">
+  <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+</div>
+
+</footer>
+
+
+
+
+
+    <script src="../js/ajuda.js"></script>
+    <script src="../js/pesquisa.js"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>    
+</body>
+</html>

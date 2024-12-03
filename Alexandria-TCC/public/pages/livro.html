@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/livro.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <title>Alexandria</title>
+  <link rel="shortcut icon" href="../img/Icones/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-bg-light">
+    <a class="navbar-logo" href="../index.html">
+      <img src="../img/logo.png" class="logo d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-collapsed" id="navbarNavAltMarkup">
+      <div class="navbar-search-center">
+        <form class="d-flex" id="formPesquisa">
+          <input id="inpPesquisa" class="search-input me-2" type="search" placeholder="Pesquisar"
+            aria-label="Pesquisar">
+          <button id="btnPesquisa" class="search-button" type="submit">
+            <img src="../img/pesquisar.png" alt="Pesquisar" class="search-icon">
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-icons-right navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="../pages/chat.html">
+          <img src="../img/chat.png" alt="Chat" class="navbar-icon">
+        </a>
+        <a class="nav-item nav-link" href="../pages/perfil.html">
+          <img src="../img/usuario.png" alt="Chat" class="usuario-icon">
+        </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <ul class="nav justify-content-center mb-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/TodosLivros.html">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/quem_somos.html">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/como_funciona.html">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/comprar_moedas.html">Comprar Moedas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Minha Estante
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../pages/meus_livros.html">Meus Livros</a></li>
+                  <li><a class="dropdown-item" href="../pages/lidos.html">Livros Lidos</a></li>
+                  <li><a class="dropdown-item" href="../pages/lista_desejo.html">Lista de Desejo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/ajuda.html">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+
+
+
+
+  <div class="container mt-5">
+    <!-- Botão Voltar -->
+    <div class="col-md-1 d-flex align-items-start flex-column">
+      <button class="btn btn-light btn-voltar">
+        <img src="../img/Icones/icone-voltar.png" alt="Voltar" class="icone-voltar">
+      </button>
+    </div>
+
+    <div class="row">
+      <!-- Coluna das Imagens -->
+      <div class="col-md-3 text-center mb-4 mb-md-0"> <!-- Adiciona margem inferior para telas pequenas -->
+        <img id="main-image" src="https://res.cloudinary.com/dwxftry8e/image/upload/v1732737936/Desconhecido_k7agsq.png"
+          class="img-fluid" alt="Capa do Livro">
+      </div>
+
+      <!-- Coluna com Detalhes do Livro -->
+      <div class="col-md-9 mb-4 mb-md-0"> <!-- Adiciona margem inferior para telas pequenas -->
+        <h1 id="txtTituloObra">Carregando...</h1>
+        <p class="autor">por <strong id="txtAutorObra">Carregando...</strong></p>
+        <button class="btn btn-outline-secondary me-3" id="btnCadastrar">Tenho este livro</button>
+      </div>
+    </div>
+
+    <!-- Seção de troca e avaliação -->
+    <div class="row mt-5">
+      <div class="col-md-3 text-center">
+        <div class="mb-3 d-flex justify-content-center">
+
+          <button id="botao-coracao" class="icones btn btn-light">
+            <img src="../img/Icones/coracao_desativado.png" alt="Preferido" class="icones" title="Favoritos">
+          </button>
+
+          <button id="botao-livro" class="icones btn btn-light">
+            <img src="../img/Icones/livro_desativado.png" alt="Já li" class="icones" title="Lidos">
+          </button>
+
+        </div>
+        <button class="btn btn-warning w-100" id="btnTrocar">Trocar</button>
+        <p class="text-center mt-2" id="txtQuantia">0 disponíveis para trocar</p>
+      </div>
+    </div>
+
+    <div class="linha"></div>
+
+    <!-- Descrição do Produto -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h1 class="content-title">Descrição do Produto</h1>
+        <p id="txtDescObra">
+          Carregando...
+        </p>
+      </div>
+    </div>
+
+    <div class="linha"></div>
+
+    <!-- Detalhes do Produto -->
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h1 class="content-title">Detalhes do Produto</h1>
+        <ul>
+          <li id="txtEditObra"><strong>Editora: </strong></li>
+          <li id="txtPagsObra"><strong>Páginas: </strong></li>
+          <li id="txtI13Obra"><strong>ISBN: </strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <br><br>
+
+  <footer id="rodape" class="fundo-cinza">
+    <div id="conteudo-rodape" class="container-rodape">
+      <!-- Links Úteis -->
+      <div id="links-uteis" class="coluna-rodape">
+        <h3 id="titulo-links-uteis" class="titulo-rodape">Links Úteis</h3>
+        <ul id="lista-links" class="lista-rodape">
+          <li id="link-home" class="item-lista">
+            <a href="../index.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Home</span>
+          </li></a>
+          <li id="link-livros" class="item-lista">
+            <a href="../pages/TodosLivros.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Livros Disponíveis</span>
+          </li></a>
+          <li id="link-destaques" class="item-lista">
+            <a href="../pages/comprar_moedas.html"><img class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta"
+                class="icone-seta"> <span class="link-text">Comprar Moedas</span>
+          </li></a>
+          <li id="link-publicar-livro" class="item-lista">
+            <a href="./TodosLivros.html"
+              onclick="alert('Pesquise seu livro e selecione a opção **TENHO ESSE LIVRO** para fazer seu cadastro. ');"><img
+                class="link-text" src="../img/Icones/seta_rodape.png" alt="Seta" class="icone-seta"> <span
+                class="link-text">Cadastrar Livros</span>
+          </li></a>
+        </ul>
+      </div>
+
+      <!-- Localização -->
+      <div id="localizacao" class="coluna-rodape centralizado">
+        <h3 id="titulo-localizacao" class="titulo-rodape">Localização</h3>
+        <p id="texto-localizacao" class="texto-rodape">
+          <img src="../img/Icones/icone_localizacao.png" alt="Localização" class="icone-seta">
+          <span class="text-rodape">Brasil</span>
+        </p>
+
+      </div>
+
+
+      <!-- Informações de Contato -->
+      <div id="informacoes-contato" class="coluna-rodape">
+        <h3 id="titulo-contato" class="titulo-rodape">Informações de Contato</h3>
+        <p id="telefone1" class="texto-rodape">
+          <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"><span class="text-rodape">+55
+            (11) 97834-5522</span>
+        </p>
+        <p id="telefone2" class="texto-rodape">
+          <img src="../img/Icones/icone_telefone.png" alt="Telefone" class="icone-contato"> <span
+            class="text-rodape">+55 (11) 96462-6242</span>
+        </p>
+        <p id="email-sac" class="texto-rodape">
+          <img src="../img/Icones/icone_email.png" alt="Email" class="icone-contato"><span class="text-rodape">SAC:
+            alexandria.tcc.01@gmail.com</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Termos -->
+    <div id="rodape-termos" class="centralizado text-rodape">
+      <span class="link-text">Termos de Serviço e Política de Privacidade | 3DSA | Alexandria</span>
+    </div>
+
+  </footer>
+
+
+  <script src="../js/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/livro.js" type="module"></script>
+
+  <script src="../js/pesquisa.js"></script>
+</body>
+
+</html>
