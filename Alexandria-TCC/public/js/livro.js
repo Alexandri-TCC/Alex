@@ -72,7 +72,7 @@ const carregaPag = async () => {
 
   
  
-    const estante = await getDocs(query(collection(doc(banco, "usuarios", usuario), "estante"), where("ISBN", "==", isbn), where("trocado", "==", false)));
+    const estante = await getDocs(query(collection(doc(banco, "usuarios", usuario), "estante"), where("ISBN", "==", isbn)));
     if(!estante.empty) {
         if (estante.docs[0].data().categoria == 'B') {
             botaoCoracao.disabled = true;
