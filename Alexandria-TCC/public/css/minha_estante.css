@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+@import url(../css/menu.css);
+@import url(../css/rodape.css);
+@import url('fonts.css'); 
+@import url(../css/css/bootstrap.css);
+@import url(../css/menu.css);
+@import url(../css/login.css);
+
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu:#b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro:#504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-width: 110px;
+    --button-height: 30px;
+    --color-fundo-cards:whitesmoke;
+    --button-border-radius: 4px;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #edece8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 250px;
+    height: auto;
+    color: #fdd835;
+    position: absolute; 
+    transition: width 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Evita rolagem */
+    padding-top: 20px;
+}
+
+/* Botão de colapso */
+#collapseBtn {
+    font-size: 24px; /* Aumenta o tamanho do botão */
+    cursor: pointer;
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: #333; /* Cor do texto do botão */
+    margin-right: 15px; /* Espaço entre o botão e o título */
+    display: inline-block; /* Permite alinhamento ao lado do título */
+}
+
+/* Título e lista de links do menu lateral */
+.sidebar-title {
+    padding: 10px;
+    font-size: 18px;
+
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: white;
+}
+
+/* Área de conteúdo principal */
+.content {
+    margin-left: 250px; /* Espaço à esquerda para o menu lateral */
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: margin-left 0.3s;
+}
+
+.content.collapsed {
+    margin-left: 60px; /* Espaço à esquerda quando colapsado */
+}
+
+/* Estilo dos cards de livros */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Imagem do livro */
+.book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Título e autor do livro */
+.book-title {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.book-author {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Estilos dos botões */
+.book-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.book-button:first-of-type {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/* Botão "Mais Detalhes" */
+.book-button:last-of-type {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+}
+
+.book-button:hover {
+    opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .book-card {
+        padding: 10px;
+    }
+
+    .book-title {
+        font-size: 14px;
+    }
+
+    .book-author {
+        font-size: 12px;
+    }
+
+    .book-button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+.content-header {
+    display: flex; /* Usar flexbox para alinhar os itens */
+    align-items: center; /* Alinhar verticalmente ao centro */
+    margin-bottom: 5%;
+}
+
+#collapseBtn {
+    margin-right: 10px; /* Espaçamento entre o botão e o título */
+}
+.content.collapsed {
+    margin-left: 0px;
+}
+.sidebar.collapsed {
+    width: 0px;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-container {
+    margin-left: 20px;
+    position: relative;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.filter-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.filter-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -100px; /* Ajuste para posicionamento à esquerda */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 120px;
+}
+
+.filter-menu li {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.filter-menu li:hover {
+    background: #f0f0f0;
+}
+.sidebar-link.active {
+    font-weight: bold;
+}
+
+.add-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.add-icon {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px; /* Tamanho do ícone */
+    transition: transform 0.2s ease;
+}
+
+.add-button:hover .add-icon {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+}
+
+/* Estilos dos botões */
+.book-button {
+    display: block;
+    width: 100%; /* Largura total do card */
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Botão "Tenho este livro" */
+.book-button-secondary {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.book-button-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Botão "Mais Detalhes" */
+.book-button {
+    background-color: var(--button-bg-color);
+    color: #000;
+    border: none;
+}
+
+.book-button:hover {
+    opacity: 0.9;
+}
+.content-title{
+    font-family: var(--font-titulo);
+    font-weight: 600;
+}
+/* Menu lateral */
+.sidebar {
+    width: 200px; /* Define um tamanho fixo menor */
+    height: 100vh; /* Ajusta para ocupar a altura total da viewport */
+    color: #fdd835;
+    position: fixed; /* Fixa o menu na posição */
+    transition: transform 0.3s ease;
+    overflow-y: auto; /* Ativa a rolagem no eixo vertical */
+    background-color: #f8f9fa; /* Cor de fundo para contraste */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+    padding-top: 20px;
+}
+
+
+
+/* Botão de colapso ajustado */
+#collapseBtn {
+    font-size: 20px;
+    margin-right: 0; /* Remove espaçamento lateral */
+    text-align: center; /* Centraliza o botão */
+}
+
+/* Título e itens do menu lateral */
+.sidebar-title {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 15px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Reduz tamanho da fonte */
+    transition: background 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #eaeaea;
+}
+
+/* Área de conteúdo principal ajustada */
+.content {
+    margin-left: 200px; /* Ajusta espaço do conteúdo para o menu menor */
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: margin-left 0.3s;
+}
+
+.sidebar {
+    color: black;
+    position: fixed; 
+    left: 0; 
+    background-color: rgb(240, 238, 238); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    padding-top: 20px;
+    font-family: var(--font-text); /* Fonte definida via variável */
+    z-index: 10; /* Adicionado para garantir a sobreposição */
+    overflow-y: auto; /* Adicionado para rolagem vertical */
+    position: absolute; /* Adicionado */
+}
+
+#collapseBtn {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    margin-right: 15px; /* Adicionado */
+}
+
+.sidebar-title {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: var(--font-titulo); /* Fonte definida via variável */
+    font-weight: 600;
+    margin-top: 1vw; /* Adicionado */
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 15px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    transition: background 0.3s; /* Adicionado para suavizar mudanças de fundo */
+    font-style: italic; /* Adicionado */
+}
+
+.sidebar-link:hover {
+    background-color: #eaeaea; /* Adicionado */
+}
+
+.sidebar-link.active {
+    font-weight: bold; /* Adicionado */
+}
+
+.sidebar.collapsed {
+    width: 0px; /* Adicionado para o estado colapsado */
+}
+
+
+
+/* Ajusta a posição do menu lateral */
+.sidebar {
+    width: 200px;
+    background-color: rgb(240, 238, 238);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Posicionado ao lado do conteúdo */
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    z-index: 10;
+    height: 50%;
+}
+
+/* Rodapé fixado na parte inferior */
+footer {
+    position: relative; /* Rodapé flui naturalmente abaixo do conteúdo */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Garantir que a área não interativa dentro do sidebar tenha a mesma cor do body */
+#menuLateral {
+    background-color: (240, 238, 238);
+    padding: 10px;
+}
+
+body {
+    background-color: #edece8; 
+}
+.content{
+    background-color: #edece8;
+}

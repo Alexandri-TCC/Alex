@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu: #b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro: #504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-border-radius: 4px;
+}
+#rodape {
+    background-color: #bfbfbf;
+    padding: 15px;
+    font-family: var(--font-text);
+   
+}
+
+#conteudo-rodape {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin: auto;
+    gap: 20px; 
+}
+
+#localizacao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+}
+
+#informacoes-contato {
+    margin: 0 auto;
+    color: white;
+}
+
+
+.logo-alexandria-rodape {
+    margin-top: -15px;
+}
+
+.logo-alexandria-rodape img {
+    width: 150px;
+    opacity: 0.7; 
+    transition: opacity 0.3s ease; 
+}
+
+.logo-alexandria-rodape img:hover {
+    opacity: 1; 
+}
+
+
+.coluna-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px; 
+    flex: 1;
+    min-width: 250px; 
+    align-items: center;
+}
+
+
+
+.titulo-rodape {
+    margin-bottom: 15px;
+    color: black;
+    font-family: var(--font-titulo, Arial);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+#lista-links { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: block; 
+}
+
+.item-lista { 
+    margin-bottom: 8px; 
+    display: block; 
+    font-family: var(--texto-fonte); 
+    color: white;
+}
+
+
+.item-lista a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.item-lista a .link-text {
+    transition: transform 0.3s ease;
+}
+
+.item-lista a:hover .link-text {
+    color: rgb(236, 234, 234);
+    transform: translateY(-5px);
+}
+
+
+.icone-seta {
+    margin-right: 8px;
+    width: 24px;
+    height: auto;
+}
+
+.icone-contato,
+.icone-rede-social {
+    width: 40px;
+    height: auto;
+}
+
+
+#localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+#rodape-termos {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1200px) {
+    #conteudo-rodape {
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+
+    .coluna-rodape {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .logo-alexandria-rodape img {
+        width: 130px;
+    }
+
+    #rodape-termos {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    #conteudo-rodape {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coluna-rodape {
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-alexandria-rodape img {
+        width: 120px;
+    }
+
+    .titulo-rodape {
+        font-size: 16px;
+    }
+
+    #rodape-termos {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 468px) {
+    #conteudo-rodape {
+        padding: 10px;
+    }
+
+    .logo-alexandria-rodape img {
+        width: 100px;
+    }
+
+    .titulo-rodape {
+        font-size: 14px;
+    }
+
+    #rodape-termos {
+        font-size: 12px;
+    }
+}

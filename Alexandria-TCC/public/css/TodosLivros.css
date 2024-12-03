@@ -1,0 +1,860 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+@import url(../css/menu.css);
+@import url(../css/login.css);
+@import url(../css/rodape.css);
+
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu:#b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro:#504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-width: 110px;
+    --button-height: 30px;
+    --color-fundo-cards:whitesmoke;
+    --button-border-radius: 4px;
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #edece8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: absolute; 
+}
+
+
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+
+.sidebar {
+    width: 200px;
+    height: 100vh; 
+    color: black;
+    position: fixed; 
+    top: 120px; 
+    left: 0; 
+    background-color: rgb(240, 238, 238); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    padding-top: 20px;
+    font-family: var(--font-text);
+    z-index: 10; 
+    overflow-y: auto; 
+    position: absolute; 
+}
+
+
+.content {
+    margin-left: 200px; 
+    padding: 20px;
+    min-height: 100vh; 
+}
+
+
+#collapseBtn {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    margin-right: 15px;
+}
+
+
+.sidebar-title {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    margin-top: 1vw;
+}
+
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 15px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    transition: background 0.3s;
+    font-style: italic;
+}
+
+.sidebar-link:hover {
+    background-color: #eaeaea;
+}
+
+
+.sidebar-link.active {
+    font-weight: bold;
+}
+
+
+.add-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.add-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.add-button:hover .add-icon {
+    transform: scale(1.1);
+}
+
+
+.book-button {
+    display: block;
+    width: 100%;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.book-button-secondary {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.book-button-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.book-button {
+    background-color: var(--button-bg-color);
+    color: #000;
+    border: none;
+}
+
+.book-button:hover {
+    opacity: 0.9;
+}
+
+
+.content-title {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+}
+
+
+.content.collapsed {
+    margin-left: 60px; 
+}
+
+.sidebar.collapsed {
+    width: 0px; 
+}
+
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.filter-container {
+    margin-left: 20px;
+    position: relative;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.filter-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.filter-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -100px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 120px;
+}
+
+.filter-menu li {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.filter-menu li:hover {
+    background: #f0f0f0;
+}
+
+
+
+.secao-livros {
+    font-family: var(--font-titulo);
+    text-align: center;
+    color: black;
+    margin: 20px auto;
+}
+
+.titulo-secao-livros {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.carrossel-livros {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    overflow: hidden;
+    width: 95%;
+}
+
+.container-carrossel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+.container-carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.card-livro {
+    flex: 0 0 calc(20% - 16px); 
+    background: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.card-livro:hover {
+    transform: translateY(-5px);
+}
+
+.imagem-livro {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.titulo-livro {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.autor-livro, .info-card {
+    font-size: 12px;
+    color: #777;
+}
+
+.botao-card {
+    width: 140px;
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 12px;
+    background-color: var(--button-bg-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.botao-card:hover {
+    background-color: var(--button-bg-hover-color);
+    border: 1px solid #aaa;
+}
+
+.botao-transparente {
+    background: none;
+    border: 1px solid #aaa;
+}
+
+.botao-transparente:hover {
+    background: #f5f5f5;
+}
+
+
+.botao-navegacao {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.button-esquerda, .button-direita {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: color 0.3s;
+    width: 100px;
+}
+
+.button-esquerda{
+    left: -47px; 
+    
+}
+
+.button-direita {
+    right: -32px; 
+    
+}
+
+
+.button-esquerda:hover, .button-direita:hover {
+    color: #000;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .card-livro {
+        flex: 0 0 calc(25% - 16px); 
+    }
+
+    .imagem-livro {
+        width: 90px;
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 950px) {
+    .card-livro {
+        flex: 0 0 calc(33.33% - 16px); 
+    }
+
+    .imagem-livro {
+        width: 80px;
+    }
+
+    .botao-navegacao {
+        font-size: 24px;
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-livro {
+        flex: 0 0 calc(50% - 16px); 
+    }
+
+    .imagem-livro {
+        width: 70px;
+    }
+
+    .titulo-livro {
+        font-size: 14px;
+    }
+
+    .botao-card {
+        font-size: 10px;
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .card-livro {
+        flex: 0 0 calc(100% - 16px); 
+    }
+
+    .imagem-livro {
+        width: 60px;
+    }
+
+    .titulo-livro {
+        font-size: 12px;
+    }
+
+    .autor-livro, .info-card {
+        font-size: 10px;
+    }
+
+    .botao-navegacao {
+        font-size: 20px;
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+        font-size: 20px;
+    }
+    .sidebar{
+        width: 150px;
+
+    }
+    .content{
+        margin-left: 150px;
+    }
+    .sidebar-title{
+        margin-top: 3vw;
+    } 
+
+}
+@media (max-width: 400px) {
+    .card-livro {
+        flex: 0 0 calc(100% - 16px); /* Cada card ocupa a largura total */
+    }
+
+    .imagem-livro {
+        width: 50px; /* Imagens menores */
+        height: auto;
+    }
+
+    .titulo-livro {
+        font-size: 12px; /* Texto menor para caber no layout */
+    }
+
+    .autor-livro, .info-card {
+        font-size: 10px; /* Detalhes menores */
+    }
+
+    .botao-card {
+        font-size: 10px; /* Botões compactos */
+        padding: 5px;
+    }
+
+    .sidebar {
+        width: 180px; /* Sidebar mais estreita */
+        font-size: 12px;
+    }
+
+    .sidebar.collapsed {
+        width: 0; /* Colapsada completamente */
+    }
+
+    .button-esquerda, .button-direita {
+        font-size: 20px; /* Setas menores */
+        width: 60px; /* Ajusta o tamanho das setas */
+    }
+
+    .content-header {
+        flex-direction: column; /* Empilha o cabeçalho */
+        align-items: flex-start;
+    }
+
+    .carrossel-livros {
+        width: 100%; /* Preenche a tela */
+        margin: 10px auto; /* Ajusta margens */
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+        font-size: 15px;
+    }
+    .sidebar{
+        width: 150px;
+
+    }
+    .content{
+        margin-left: 150px;
+    }
+    .sidebar-title{
+        margin-top: 3vw;
+    } 
+    
+    .add-icon{
+        width: 15px !important;
+        height: auto;
+        margin-top: -100px;
+        margin-left: 50px;
+    }
+    #collapseBtn{
+        font-size: 15px !important;
+        height: auto;
+    }
+}
+
+@media (max-width: 300px) {
+    .card-livro {
+        flex: 0 0 100%; /* Um card por linha */
+        padding: 10px; /* Reduz padding interno */
+    }
+
+    .imagem-livro {
+        width: 40px; /* Imagens ainda menores */
+    }
+
+    .titulo-livro {
+        font-size: 10px; /* Texto menor */
+    }
+
+    .autor-livro, .info-card {
+        font-size: 8px; /* Ajusta detalhes */
+    }
+
+    .botao-card {
+        font-size: 8px; /* Botões ainda mais compactos */
+        padding: 4px;
+    }
+
+    .sidebar {
+        width: 150px; /* Sidebar ainda mais estreita */
+    }
+
+    .button-esquerda, .button-direita {
+        font-size: 18px; /* Tamanho reduzido das setas */
+        width: 50px;
+    }
+
+    .content-header {
+        margin-bottom: 10%; /* Reduz o espaço entre elementos */
+    }
+
+    .filter-button {
+        padding: 3px; /* Ajusta botões de filtro */
+    }
+    .titulo-secao-livros{
+        white-space: nowrap;
+    }
+    .content-title{
+        white-space: nowrap;
+    }
+}
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+    position: fixed;
+    height: 100%;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  .filter-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .book-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 5px;
+  }
+  
+  .filter-menu li {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .filter-menu li:hover {
+    background-color: #f4f4f4;
+  }
+
+  /* Menu lateral */
+.sidebar {
+    width: 200px; /* Define um tamanho fixo menor */
+    height: 100vh; /* Ajusta para ocupar a altura total da viewport */
+    color: #fdd835;
+    position: fixed; /* Fixa o menu na posição */
+    transition: transform 0.3s ease;
+    overflow-y: auto; /* Ativa a rolagem no eixo vertical */
+    background-color: #f8f9fa; /* Cor de fundo para contraste */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+    padding-top: 20px;
+}
+
+
+
+/* Botão de colapso ajustado */
+#collapseBtn {
+    font-size: 20px;
+    margin-right: 0; /* Remove espaçamento lateral */
+    text-align: center; /* Centraliza o botão */
+}
+
+/* Título e itens do menu lateral */
+.sidebar-title {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 15px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Reduz tamanho da fonte */
+    transition: background 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #eaeaea;
+}
+
+/* Área de conteúdo principal ajustada */
+.content {
+    margin-left: 200px; /* Ajusta espaço do conteúdo para o menu menor */
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: margin-left 0.3s;
+}
+
+.sidebar {
+    color: black;
+    position: fixed; 
+    left: 0; 
+    background-color: rgb(240, 238, 238); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    padding-top: 20px;
+    font-family: var(--font-text); /* Fonte definida via variável */
+    z-index: 10; /* Adicionado para garantir a sobreposição */
+    overflow-y: auto; /* Adicionado para rolagem vertical */
+    position: absolute; /* Adicionado */
+}
+
+#collapseBtn {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    margin-right: 15px; /* Adicionado */
+}
+
+.sidebar-title {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: var(--font-titulo); /* Fonte definida via variável */
+    font-weight: 600;
+    margin-top: 1vw; /* Adicionado */
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 15px;
+}
+
+.sidebar-link {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    transition: background 0.3s; /* Adicionado para suavizar mudanças de fundo */
+    font-style: italic; /* Adicionado */
+}
+
+.sidebar-link:hover {
+    background-color: #eaeaea; /* Adicionado */
+}
+
+.sidebar-link.active {
+    font-weight: bold; /* Adicionado */
+}
+
+.sidebar.collapsed {
+    width: 0px; /* Adicionado para o estado colapsado */
+}
+
+
+
+/* Ajusta a posição do menu lateral */
+.sidebar {
+    width: 200px;
+    background-color: rgb(240, 238, 238);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Posicionado ao lado do conteúdo */
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    z-index: 10;
+    height: 50%;
+}
+
+/* Rodapé fixado na parte inferior */
+footer {
+    position: relative; /* Rodapé flui naturalmente abaixo do conteúdo */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Garantir que a área não interativa dentro do sidebar tenha a mesma cor do body */
+#menuLateral {
+    background-color: (240, 238, 238);
+    padding: 10px;
+}
+
+body {
+    background-color: #edece8; 
+}
+.content{
+    background-color: #edece8;
+}
+/* Ocultar o menu lateral ao colapsar */
+.sidebar.collapsed {
+    transform: translateX(-100%); /* Move o menu para fora da tela */
+}
+
+/* Ajustar o conteúdo ao colapsar o menu */
+.content.collapsed {
+    margin-left: 0; /* Remove o espaço reservado para o menu lateral */
+}
+/* Container que vai manter os cards */
+.livros {
+    display: flex;
+    flex-wrap: wrap;   /* Permite que os cards quebrem linha quando necessário */
+    justify-content: center;  /* Espaçamento entre os cards */
+    gap: 20px; /* Espaço entre os cards */
+    margin-top: 20px;
+  }
+  
+  /* Card do livro */
+  .card-livro {
+    width: 100%;  /* Largura total para telas pequenas */
+    max-width: 300px; /* Tamanho máximo do card */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    text-align: center;
+  }
+  
+  /* Exibição dos cards em linha (dois por linha) em telas médias */
+  @media (min-width: 768px) {
+    .card-livro {
+      width: 45%;  /* Dois cards por linha */
+    }
+  }
+  
+  /* Exibição dos cards em linha (três por linha) em telas grandes */
+  @media (min-width: 1024px) {
+    .card-livro {
+      width: 30%;  /* Três cards por linha */
+    }
+  }
+  

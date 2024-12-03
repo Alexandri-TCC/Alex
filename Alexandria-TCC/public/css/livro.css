@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+@import url(../css/menu.css);
+@import url(../css/login.css);
+@import url(../css/rodape.css);
+@import url('fonts.css'); 
+@import url(../css/css/bootstrap.css);
+@import url(../css/menu.css);
+
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu:#b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro:#504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-width: 110px;
+    --button-height: 30px;
+    --color-fundo-cards:whitesmoke;
+    --button-border-radius: 4px;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #edece8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #333;
+    font-size: 2rem;
+}
+
+.autor {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.descricao {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+img.img-thumbnail {
+    width: 50px; /* Tamanho reduzido das miniaturas */
+    height: auto;
+    cursor: pointer;
+}
+
+img#main-image {
+    max-width: 100%;
+    height: 40vh;
+    border: 2px solid #ddd;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.stars span {
+    font-size: 1.5rem;
+    color: gold;
+}
+
+.miniaturas-container {
+    justify-content: space-around; /* Distribui as miniaturas */
+}
+.star {
+    cursor: pointer;
+    font-size: 2rem; /* Ajuste o tamanho das estrelas conforme necessário */
+    color: grey; /* Cor padrão para estrelas vazias */
+}
+
+.star.selected {
+    color: gold; /* Cor para estrelas selecionadas */
+}
+.linha {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+.content-title {
+   
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+/*css estrelas*/
+.avaliacao{
+    display: flex;
+   }
+  .star-icon{
+    list-style-type: none;
+    cursor: pointer;
+    color: #ffe500;
+    font-size: 30px;/* alterar o tamanho das estrelas */
+  }
+  .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon.ativo ~ .star-icon::before{
+    content: "\2606";
+  }
+  .avaliacao:hover .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon:hover ~ .star-icon::before{
+    content: "\2606";
+  }
+
+  .icones {
+    width: 40%; /* Tamanho padrão para telas maiores */
+    height: 40%;
+    object-fit: contain;
+    padding: 5px;
+    align-items: center;
+    border: none; /* Remove qualquer borda ao redor do botão */
+    background-color: transparent; /* Fundo transparente */
+    outline: none; /* Remove o contorno de foco padrão */
+}
+
+.btn-light:hover {
+    background-color: transparent; /* Remove o fundo cinza ao passar o mouse */
+}
+
+.btn-light:focus {
+    box-shadow: none; /* Remove a sombra ao focar no botão */
+    outline: none; /* Remove a linha de contorno ao focar */
+}
+
+.btn-light:active {
+    outline: none; /* Remove a linha de contorno quando clicado */
+    box-shadow: none; /* Remove a sombra ao clicar */
+}
+
+.btn-light {
+    padding: 0.25rem; /* Padding para botões em telas maiores */
+}
+
+/* Para telas médias (tablets) */
+@media (max-width: 768px) {
+    .icones {
+        width: 30%; /* Diminui o tamanho dos ícones em telas médias */
+        height: 30%;
+        padding: 4px;
+    }
+
+    .btn-light {
+        padding: 0.2rem; /* Ajusta o padding do botão */
+    }
+}
+
+/* Para telas pequenas (smartphones) */
+@media (max-width: 480px) {
+    .icones {
+        width: 20%; /* Ícones ainda menores para smartphones */
+        height: 20%;
+        padding: 3px;
+    }
+
+    .btn-light {
+        padding: 0.15rem; /* Torna os botões mais compactos */
+    }
+}
+.btn-voltar {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    padding-left: 5px; /* Ajusta a distância do ícone para a esquerda */
+}
+
+.icone-voltar {
+    width: 25px; /* Tamanho um pouco maior para o ícone */
+    height: auto;
+    cursor: pointer;
+}
+
+.btn-voltar:hover .icone-voltar {
+    opacity: 0.8; /* Efeito visual ao passar o mouse */
+}
+
+.btn-voltar:focus {
+    outline: none;
+    box-shadow: none;
+}

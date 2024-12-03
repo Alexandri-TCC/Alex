@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+@import url(../css/menu.css);
+@import url(../css/login.css);
+@import url(../css/rodape.css);
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu:#b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro:#504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-width: 110px;
+    --button-height: 30px;
+    --color-fundo-cards:whitesmoke;
+    --button-border-radius: 4px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #edece8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; 
+    padding: 20px; 
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    margin: 30px auto;
+    width: 90%;
+    margin-top: -2vw;
+}
+
+h2 {
+    width: 100%;
+    text-align: left;
+    font-size: 24px; 
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    font-family: var(--font-titulo);
+}
+
+.upload-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    width: 220px;
+    height: 320px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-box input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.upload-placeholder {
+    text-align: center;
+    color: #666;
+    pointer-events: none;
+}
+
+.upload-placeholder img {
+    width: 40px;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.upload-info {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #888;
+}
+
+
+.form-fields {
+    flex: 2;
+    width: 100%;
+    max-width: 100%;
+}
+
+.field-group {
+    margin-bottom: 12px; 
+}
+
+.form-fields label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.form-fields input,
+.form-fields textarea,
+.form-fields select {
+    width: 100%;
+    padding: 8px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 12px; 
+}
+
+.form-fields input:focus,
+.form-fields textarea:focus,
+.form-fields select:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.form-fields textarea {
+    resize: vertical;
+    height: 60px; 
+}
+
+
+.field-row {
+    display: flex;
+    gap: 15px; 
+}
+
+.field-row .field-group {
+    flex: 1;
+}
+
+.field-row .field-group input,
+.field-row .field-group select {
+    width: 100%;
+}
+
+
+.cadastrar-btn {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 15px;
+    border: none;
+    background-color: var(--button-bg-color);
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cadastrar-btn:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .upload-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .upload-box {
+        width: 100%;
+        max-width: 300px;
+        height: 260px;
+    }
+
+    .form-fields {
+        width: 100%;
+    }
+
+    .field-group {
+        width: 100%;
+    }
+
+    .cadastrar-btn {
+        width: 100%;
+    }
+
+    .field-row {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 18px; 
+    }
+
+    .upload-box {
+        width: 100%;
+        max-width: 260px;
+        height: 220px;
+    }
+
+    .form-fields input,
+    .form-fields textarea,
+    .form-fields select {
+        font-size: 10px; 
+        padding: 6px; 
+    }
+
+    .cadastrar-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.carousel-container h3 {
+    margin-bottom: 1px;
+    font-size: 30px;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    text-align: center;
+}
+
+.titulo-motivo h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+hr {
+    width: 60%;
+    border: 1px solid #6e6b6b; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 30px; 
+    margin-top: 60px;
+    justify-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+    transform: scale(1.03); 
+}
+
+.card-image img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+}
+
+.icone-voltar {
+    width: 25px;  
+    height: auto;
+    cursor: pointer;
+    margin-left: 10vw;  
+    margin-top: 2vw;    
+    z-index: 10;        
+    position: relative;
+}
+
+
+.btn-voltar {
+    background: none;
+    border: none;
+    padding: 10px;  
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn-voltar:hover .icone-voltar {
+    opacity: 0.8; 
+}
+
+.btn-voltar:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+@media (max-width: 1024px) {
+    .icone-voltar {
+        width: 25px;   
+        margin-left: 5vw;  
+        margin-top: 3vw;   
+    }
+}
+
+
+@media (max-width: 768px) {
+    .icone-voltar {
+        width: 20px;   
+        margin-left: 3vw;  
+        margin-top: 4vw;   
+    }
+}
+
+
+@media (max-width: 480px) {
+    .icone-voltar {
+        width: 18px;   
+        margin-left: 2vw;  
+        margin-top: 5vw;   
+    }
+}
+
+
+.form-container {
+    position: relative;  
+    z-index: 5;        
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #444;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+.animacao {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .carousel-container h3 {
+        font-size: 24px; 
+    }
+
+    hr {
+        width: 80%; 
+    }
+
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center; 
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-container h3 {
+        font-size: 20px; 
+    }
+
+    hr {
+        width: 90%; 
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        align-items: center;  
+    }
+}
+
+
+@media (max-width: 920px) {
+    .carousel-container h3 {
+        font-size: 20px; 
+    }
+
+    hr {
+        width: 90%; 
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        align-items: center;  
+    }
+
+    .icone-voltar{
+        margin-left: 1vw;
+    }
+}
+/* Estilos para o campo de input com as imagens alternando */
+#image-preview {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Define uma altura para o campo de imagens */
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden; /* Garante que as imagens não ultrapassem os limites */
+  }
+  
+  #image-preview img {
+    transition: opacity 1s ease-in-out; /* Faz a transição suave entre as imagens */
+  }
+  
+  /* Estilos para os nomes das imagens abaixo do input */
+  .image-names {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .image-names p {
+    margin: 3px 0;
+  }
+  

@@ -1,0 +1,189 @@
+/* Alinha o logo à esquerda */
+.navbar-logo {
+  margin-right: auto;
+}
+
+/* Centraliza o formulário de pesquisa */
+.navbar-search-center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.search-input {
+  width: 500px; /* Tamanho inicial */
+  margin: 0;
+}
+
+/* Ajusta o tamanho da barra de pesquisa em dispositivos menores */
+@media (max-width: 1200px) {
+  .search-input {
+    width: 400px; /* Reduz o tamanho para telas menores */
+  }
+}
+
+@media (max-width: 992px) {
+  .search-input {
+    width: 300px; /* Reduz ainda mais o tamanho */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 200px; /* Tamanho reduzido para telas pequenas */
+  }
+}
+
+@media (max-width: 576px) {
+  .search-input {
+    width: 150px; /* Tamanho mínimo para telas muito pequenas */
+  }
+}
+
+/* Ajusta o tamanho e o espaçamento dos ícones */
+.navbar-icon {
+  width: 30px; /* Tamanho dos ícones */
+  height: 30px;
+}
+
+/* Alinha os ícones à direita */
+.navbar-icons-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Move os ícones para o final do contêiner */
+}
+
+/* Ajusta o espaçamento entre os ícones */
+.navbar-icons-right .nav-item {
+  margin-left: 10px; /* Espaço entre ícones */
+}
+
+/* Estiliza o botão de pesquisa */
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px; /* Espaçamento entre o input e o botão */
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.search-button .search-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+
+/* Ajusta o tamanho do logo */
+.logo {
+  width: 140px; /* Define um tamanho fixo para a logo */
+  height: auto; /* Mantém a proporção da imagem */
+  max-width: 100%; /* Garante que a logo não ultrapasse 100% do contêiner */
+  margin-left: 20%;
+}
+
+/* Estiliza os links da navbar */
+.nav-link:hover {
+  color: #6c757d; /* Cinza escuro ao passar o mouse */
+}
+
+/* Remove a seta do dropdown */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Estilo para a seção do menu abaixo da navbar */
+.navbar-menu {
+  background-color: #f8f9fa;
+  margin-top: 0;
+}
+
+/* Estiliza o container da navbar quando expandido */
+.navbar-expanded {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.navbar-expanded .navbar-nav .nav-link {
+  margin-left: 10px;
+}
+
+.navbar-expanded .navbar-nav .nav-item:last-child {
+  margin-left: auto;
+}
+
+/* Estilo para a navbar quando colapsada */
+.navbar-collapsed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Coluna com o input e os ícones */
+.navbar-column-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Coluna com os links */
+.navbar-column-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* Estilo para a lista de links */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.nav-item {
+  margin: 0 10px;
+}
+
+/* Fundo personalizado */
+.navbar-bg-light {
+  background-color: #aba6a6 !important;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer !important;
+}
+
+/* Remover o contorno azul ao clicar nos links e botões */
+.btn:focus,
+.nav-link:focus,
+.btn-outline-success:focus,
+img.img-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Sobrescrevendo o estilo padrão do Bootstrap para a classe nav-link */
+.nav-link {
+  color: #ffffff; /* Define a cor dos links */
+  text-decoration: none; /* Remove a sublinha */
+}
+nav.navbar {
+  z-index: 1000; /* Coloca a navbar no topo das camadas */
+}
+
+.nav-link:hover, 
+.nav-link:focus, 
+.nav-link:active {
+  color: #6c757d; /* Mantém a cor branca ao passar o mouse, focar ou clicar */
+  outline: none; /* Remove o contorno */
+  box-shadow: none; /* Remove a sombra que aparece ao clicar */
+}
+.dropdown-menu{
+  --bs-dropdown-link-active-bg: #fdd835;
+}

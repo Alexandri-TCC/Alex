@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap'); /* Fonte Título Alexandria */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Fonte Texto */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Mensagem Letreiro */
+@import url(../css/menu.css);
+
+@import url(../css/rodape.css);
+:root {
+    --font-mensagem: 'New Amsterdam', sans-serif;
+    --font-titulo: 'Playfair Display', serif;
+    --font-text: 'Public Sans', sans-serif;
+    --font-size: 13px;
+    --color--bg-menu:#b0b0b0;
+    --button-bg-color: #fdd835;
+    --button-bg-hover-color: #fbc02d;
+    --font-bg-cinza-claro: #706c6c;
+    --font-bg-cinza-escuro:#504b4b;
+    --button-font-size: 12px;
+    --button-padding: 8px 16px;
+    --button-width: 110px;
+    --button-height: 30px;
+    --color-fundo-cards:whitesmoke;
+    --button-border-radius: 4px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #edece8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.container-perfil {
+    background-color: #fff;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.informacoes-perfil {
+    display: flex;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.detalhes-perfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes-perfil .nome-usuario {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.detalhes-perfil .nivel-conta {
+    margin: 5px 0;
+    color: #555;
+}
+
+.detalhes-perfil .detalhes {
+    margin: 5px 0;
+    color: #555;
+}
+
+.icone-moedas img {
+    width: 20px;
+    height: auto;
+    margin: 5px 0;
+    margin-left: 10px;
+margin-right: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.botoes-escolha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-text);
+    
+}
+.link-button{
+text-decoration: none;
+color: black;
+}
+.btn-amarelo {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.btn-transparente {
+    background-color: transparent;
+    border: 1px solid var(--font-bg-cinza-escuro);
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-transparente:hover {
+    background-color: rgb(236, 228, 228);
+}
+
+.historico-compras {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.historico-compras svg {
+    margin-right: 5px;
+    margin-top: 10px;
+    
+}
+
+
+.Titulo-livro-cadastro .titulo-livro {
+    font-family: var(--font-titulo);
+    font-size: 1.5vw;
+    margin: auto;
+    margin-left: 4.5vw;
+}
+
+.titulo-livro {
+    font-family: var(--font-titulo);
+    font-size: 30px !important;
+    font-weight: 600;
+}
+
+.container-total-card {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 85%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 18px;
+    padding: 5px;
+    margin: 0 auto;
+    max-width: 80vw;
+    margin-left: 2vw;
+}
+
+.content {
+    flex: 0 0 calc(20% - 20px);
+    height: auto;
+    margin: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5vw;
+    margin-left: 2vw;
+}
+
+.content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -6px);
+}
+
+.img-livros {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.p-frase {
+    color: var(--font-bg-cinza-claro);
+    margin: 6px 5px;
+    font-size: 13px;
+}
+
+.content-trocas {
+    flex: 0 0 calc(20% - 20px);
+    height: auto;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+    margin-left: 2vw;
+    margin-bottom: 5vw;
+}
+
+.content-trocas:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -6px);
+}
+
+.img-livros-trocas img {
+    width: 8vw;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.exchange-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vw;
+    margin-top: -3vw;
+}
+
+.circulo {
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status h4 {
+    font-size: 20px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    margin: 0;
+}
+
+.exchange-info p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.h3-titulo {
+    margin-top: 2px;
+    font-size: 15px;
+    color: var(--font-bg-cinza-escuro);
+}
+
+.p-autor {
+    font-size: 12px;
+    color: var(--font-bg-cinza-claro);
+    margin-top: -5px;
+}
+
+.p-card {
+    color: var(--font-bg-cinza-claro);
+    margin: 6px 5px;
+    font-size: var(--font-size);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-perfil {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .botoes-escolha {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .content {
+        flex: 0 0 100%;
+        margin: 10px 0;
+    }
+
+    .container-total-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content-trocas {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .img-livros-trocas img {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-perfil {
+        padding: 10px;
+        width: 90%;
+    }
+
+    .content {
+        flex: 0 0 100%;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .img-livros {
+        width: 80px;
+    }
+
+    .status h4 {
+        font-size: 16px;
+    }
+
+    .img-livros-trocas img {
+        width: 40vw;
+    }
+}.container-editar-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 20px;
+    transform: none;  
+    position: relative;
+    height: auto;
+}
+
+.seta-voltar {
+    position: relative;  
+    top: 30px;
+    margin-left: -600px;  
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.seta-voltar img {
+    width: 40px;
+    height: auto;
+}
+
+.form-login-cadastro {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 20px;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.3);
+    gap: 10px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: -5px;
+    margin-bottom: 50px;
+}
+
+.form-login-cadastro img {
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+    margin-bottom: 5px;
+    margin-top: -20px;
+}
+
+.form-login-cadastro input,
+.form-login-cadastro select {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    flex: 1;
+    min-width: 120px;
+}
+
+.img-login-cadastro {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.titulo-login-cadastro {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.6em;
+    font-family: var(--font-titulo);
+    margin-top: -65px;
+}
+
+.mensagem-login-cadastro {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: -18px;
+}
+
+.btn {
+    background-color: var(--button-bg-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+    padding: 8px 12px;
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-transparente {
+    background-color: transparent;
+    border: 1px solid var(--font-bg-cinza-escuro);
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-transparente:hover {
+    background-color: rgb(236, 228, 228) !important;
+}
+
+.btn:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
+.foto-perfil-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .form-login-cadastro {
+        padding: 20px;
+    }
+
+    .form-login-cadastro img {
+        width: 40%;
+        margin-left: 30%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+
+    .titulo-login-cadastro {
+        font-size: 1.5em;
+        margin-top: -80px;
+    }
+
+    .seta-voltar img {
+        width: 40px;
+        margin-left: 0%; 
+    }
+}
+
+@media  (max-width: 480px) {
+    .form-login-cadastro {
+        padding: 15px;
+    }
+
+    .form-login-cadastro img {
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 20px;
+    }
+
+    .titulo-login-cadastro {
+        font-size: 1.3em;
+        margin-top: -90px;
+        margin-bottom: 10px;
+    }
+
+    .seta-voltar img {
+        width: 30px;
+        margin-left: -10%; 
+    }
+}
+
+@media  (max-width: 375px) {
+    .form-login-cadastro {
+        padding: 15px;
+    }
+
+    .form-login-cadastro img {
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 20px;
+    }
+
+    .titulo-login-cadastro {
+        font-size: 1.3em;
+        margin-top: -90px;
+        margin-bottom: 10px;
+    }
+
+    .seta-voltar img {
+        width: 30px;
+        margin-left: -10%; 
+    }
+}
+/* histórico de compras */
+.fundo-borrado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.container-historico {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-historico h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+}
+
+#tabela-historico {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabela-historico th, #tabela-historico td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#tabela-historico th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+#tabela-historico td {
+    color: #555;
+}
+
+#tabela-historico tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tabela-historico tr:hover {
+    background-color: #f1f1f1;
+}
