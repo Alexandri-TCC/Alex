@@ -7,7 +7,7 @@ const chaves = [
     "AIzaSyAxAJAngD6Mmj7pBUsOJea_M2CPRhJid1A"
 ];
 
-const apiKey = chaves[5]
+const apiKey = chaves[1]
 
 const buscaLivroTexto = async (pesquisa, inicio) => {
     console.log(apiKey);
